@@ -5,7 +5,6 @@ This is an E-Commerce Backend Microservices.
 
 > Why write plugins when you can build your own e-commerce platform?
 
-![Swagger API Documentation](/screenshots/SwaggerDocs.png?raw=true "Swagger API Documentation")
 
 ### API Resources
 After deploying and running Ecommerce locally, you can access the [Swagger](https://openapis.org/) API Documentation by browsing to `localhost:8000/docs`.
