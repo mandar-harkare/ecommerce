@@ -1,7 +1,7 @@
 # Welcome
-This is an E-Commerce Backend (RESTful) API.
+This is an E-Commerce Backend Microservices.
 
-It was built with the [Yoonic E-Commerce Storefront](https://github.com/yoonic/nicistore) application in mind and you can check it out live powering [NICI Store](https://nicistore.com/en)!
+
 
 > Why write plugins when you can build your own e-commerce platform?
 
@@ -28,17 +28,11 @@ Overall, Ecommerce provides services for:
 - Checkouts
 - Orders
 
-### Batteries Included
-- [Mailgun](https://mailgun.com) for transactional emails
-- [Switch Payments](https://switchpayments.com) for payments
-
-Storefront has a few more tricks up its sleeve ;)
 
 ## Requirements
 
 - Node.js + NPM (v4.x LTS)
 - [Rethinkdb](http://rethinkdb.com/)
-- [Yoonic Storefront](https://github.com/yoonic/nicistore) (optional)
 
 ## Installation
 In order to setup, run and start hacking the app locally you just have to:
@@ -58,18 +52,10 @@ In order to setup, run and start hacking the app locally you just have to:
 7. Create a JWT secret key (e.g. using `openssl rand -base64 32`) and either:
   - Setup the env variable `JWT_KEY`
   - Add it to the configuration file at `config/development` in `app.jwtKey`
-6. In the directory of the Atlas clone, run `npm run dev`
+6. In the directory of the Ecommerce clone, run `npm run dev`
 
-At this point, you should be have your local deploy of Atlas running on `http://localhost:8000` and can point your local deploy of Storefront to it.
-
-### Admin Account
-In order to access Storefront's Admin and perform certain API calls, an Administrator account is required.
-
-1. Create an account (either via the API or Storefront)
-2. In a browser, navigate to `http://localhost:8080/#dataexplorer`
-3. Run the following query `r.db('atlas').table('Users').filter({email: '{YOUR_USER_EMAIL}'}).update({status: 'active', scope: ['admin']});` (don't forget to replace `{YOUR_USER_EMAIL}` with the email address of the account you created)
+At this point, you should be have your local deploy of Atlas running on `http://localhost:8000`
 
 ## Contacts
 Comments, suggestions, doubts, flames, /dev/random, etc...
-- Email **andre [at] yoonic.net**
-- Twitter [@andreftavares](http://twitter.com/andreftavares)
+- Email **mandar.harkare [at] gmail.com**
