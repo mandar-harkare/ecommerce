@@ -40,7 +40,7 @@ In order to setup, run and start hacking the app locally you just have to:
 1. Clone this repository
 2. `npm install`
 3. Start rethinkdb server and, in a browser, navigate to `http://localhost:8080/#tables` (RethinkDB admin)
-4. Create a database named `atlas`
+4. Create a database named `ecommerce`
 5. In that database, create the following tables:
   - `Carts`
   - `Checkouts`
