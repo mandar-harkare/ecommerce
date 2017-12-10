@@ -1,30 +1,32 @@
-FROM debian:jessie
+FROM node:alpine
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    nano \
-    supervisor
+RUN npm install
 
-# Install Node.js
-RUN curl -sL https://deb.nodesource.com/setup_4.x | bash -
-RUN apt-get install -y nodejs
+# Default value, but will be overriden
+# by whatever user or docker-compose provides
+ENV NODE_ENV=dev
 
-# Improve cache invalidations by only running npm if requirements have indeed changed
 WORKDIR /app
+
+# NPM Requirements
 COPY package.json /app/
-RUN npm install --no-bin-links
 
-# Supervisor settings
-COPY docker/supervisord.conf /etc/supervisor/conf.d/atlas.conf
-
-# Application source code
 COPY config/ /app/config
 COPY src/ /app/src
 COPY index.js /app/
 COPY scripts.js /app/
 
+# Correct file permissions
+
+
+# Set Run Settings
+
+WORKDIR /app
+
+# Install the dependencies
+RUN npm install
+
 # Expose application server port
 EXPOSE 8000
 
-CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf", "-n"]
+CMD npm run ${NODE_ENV}

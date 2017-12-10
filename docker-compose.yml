@@ -1,0 +1,18 @@
+version: "3"
+services:
+  db:
+    image: rethinkdb:latest
+    ports:
+      - "38080:8080"
+  atlas:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/home/app/atlas/src
+      - /home/app/atlas/src/node_modules
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - JWT_KEY=${JWT_KEY}
+    depends_on:
+          - db
