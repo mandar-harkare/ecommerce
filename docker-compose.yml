@@ -20,6 +20,8 @@ services:
           - db
   mariadb:
     image: 'bitnami/mariadb:latest'
+    ports:
+      - '3306:3306'
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:
@@ -37,7 +39,7 @@ services:
       - mariadb
     environment:
       - PRESTASHOP_HOST=localhost
-  
+
 volumes:
   mariadb_data:
     driver: local
