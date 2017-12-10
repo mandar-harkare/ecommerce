@@ -33,6 +33,7 @@
     "node-uuid": "1.4.7",
     "request": "2.71.0",
     "rethinkdb": "*",
+    "rethinkdbdash": "2.2.18",
     "vision": "^4.1.0"
   },
   "devDependencies": {

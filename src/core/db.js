@@ -7,8 +7,8 @@ import log from './logging';
 /**
  * Import and initialize RethinkDB connection pool
  */
-//const rethinkdb = require('rethinkdbdash')({servers: config.database.servers});
-const rethinkdb =  require('rethinkdb');
+const rethinkdb = require('rethinkdbdash')({servers: config.database.servers});
+//const rethinkdb =  require('rethinkdb');
 
 /**
  * Test if application's database exists
