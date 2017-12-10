@@ -18,3 +18,28 @@ services:
       - JWT_KEY=${JWT_KEY}
     depends_on:
           - db
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - 'mariadb_data:/bitnami'
+  prestashop:
+    image: 'bitnami/prestashop:latest'
+    labels:
+      kompose.service.type: nodeport
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - 'prestashop_data:/bitnami'
+    depends_on:
+      - mariadb
+    environment:
+      - PRESTASHOP_HOST=localhost
+  
+volumes:
+  mariadb_data:
+    driver: local
+  prestashop_data:
+    driver: local
