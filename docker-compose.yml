@@ -4,8 +4,8 @@ services:
     image: rethinkdb:latest
     ports:
       - "38080:8080"
-      - "28015:38015"
-      - "29015:39015"
+      - "38015:28015"
+      - "39015:29015"
   atlas:
     build: .
     ports:
